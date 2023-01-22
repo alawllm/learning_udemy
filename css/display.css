@@ -1,0 +1,36 @@
+html {
+    font-size: 12px
+}
+
+section {
+    background-color: grey;
+    width: 500px;
+    height: 400px;
+}
+
+div {
+    background-color: blueviolet;
+    width: 80%;
+    height: 50%
+}
+
+
+button {
+    font-size: 1.2rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.6rem;
+    background-color: turquoise;
+
+}
+
+ul {
+    font-size: 1.5rem;
+}
+
+#rems h2 {
+    font-size: 4rem;
+}
+
+#rems h2 {
+    font-size: 2rem;
+}

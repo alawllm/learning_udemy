@@ -1,0 +1,14 @@
+nav {
+    text-size: 1.5rem;
+    color: rgb(154, 149, 149);
+    text-transform: uppercase;
+    font-family: Futura, Seymour one;
+    margin-left: calc(10%/6);
+    padding: 20px 0;
+
+}
+
+img {
+    width: 30%;
+    margin: calc(10%/6);
+}

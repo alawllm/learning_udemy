@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h2>Forms</h2>
+    file:///tacos?username=Ala&password=popo&color=%23000000
+    <form action="/tacos">
+
+        <button TYPE="button">DONT SUBMIT THE FORM</button>
+        <!--Button type button won't submit-->
+
+        <p>
+            <label for="username">Enter a username</label>
+            <input id="username" type="text" placeholder="username" name="username">
+        </p>
+        <button>SUBMIT THE FORM</button>
+        <!--Default is to submit the form -->
+        <p>
+            <label for="password">Enter a password</label>
+            <input id="password" type="password" placeholder="password" name="password">
+        </p>
+
+        <p>
+            <label for="color">Choose color</label>
+            <input id="color" type="color" name="color">
+        </p>
+
+        <p>
+            <!--mozna wybrac min i max-->
+            <label for="number">Enter a number</label>
+            <input id="number" min="1" max="500" type="number" placeholder="num" name="number">
+            <input type="SUBMIT" value="Button">
+            <!--another way of making a button-->
+        </p>
+        <button>Submit</button>
+    </form>
+    <!--To ponizej dziala!!!-->
+    <h2>Hijacking searches</h2>
+    <button>Submit2</button>
+    <form action="https://www.google.com/search">
+        <input name="q" type="text">
+        <button>Search</button>
+    </form>
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <button>Search Reddit</button>
+    </form>
+
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search google</button>
+    </form>
+
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>Search youtube</button>
+    </form>
+    <h2>More input</h2>
+    <form action="/birds">
+        <input type="checkbox" name="agree_tos" id="agree">
+        <!--LABEL FOR ID ALWAYS, VALUE GETS SENT TO SERVER-->
+        <label for="agree">I agree to everything</label>
+        <p>
+            <label for="xs">XS</label>
+            <input type="radio" name="size" id="XS" value="xs">
+            <label for="S">S</label>
+            <input type="radio" name="size" id="S" value="s">
+            <label for="M">M</label>
+            <input type="radio" name="size" id="M" value="m">
+            <label for="L">L</label>
+            <input type="radio" name="size" id="L" value="l">
+
+        </p>
+
+        <p>
+            <label for="">Please Select a Meal</label>
+            <select name="meal" id="meal">
+                <option value="fish">Fish</option>
+                <option value="veg" selected>Veg</option>
+                <option value="steak">steak</option>
+            </select>
+        </p>
+        <button>Submit</button>
+    </form>
+
+    <form action="/crisps">
+        <!--Slider Range, min max mozna ustalic-->
+        <input type="range" id="volume" name="volume" min="0" max="20" step="5">
+        <label for="volume">Choose volume</label>
+        <button>Submit</button>
+
+    </form>
+
+    <label for="">Any requests?</label>
+    <textarea name="Requests?" placeholder="Yeah?" id="Requests" cols="20" rows="20"></textarea>
+
+    <h2>Validations Dummy</h2>
+    <form action="/dummy">
+        <label for="first">Enter first name</label>
+        <input type="text" name="first" id="first" required>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" minlength="5" maxlength="20">
+
+        </p>
+
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
