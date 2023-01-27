@@ -95,7 +95,7 @@ const movies = [
 
 // desctructuring
 
-// movies.filter(({ score }) => score >= 90)
+movies.filter(({ score }) => score >= 90)
 
 // desctructuring parameters
 // when they are passed into a function
@@ -107,3 +107,4 @@ movies.map(movie => {
 movies.map(({ title, score, year }) => {
     return `${title} (${year}) is rated ${score}`
 })
+
