@@ -17,10 +17,41 @@ document.getElementsByTagName('p')
 
 // get Elements by Class Name
 
-document.getElementsByClassName('square')
+// document.getElementsByClassName('square')
 
 // manipulating the collection - changing the image source, selecting class
 
-const squareImages = document.getElementsByClassName('square'){
-    img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Silky_bantam.jpg/440px-Silky_bantam.jpg'
+// const squareImages = document.getElementsByClassName('square'){
+//     img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Silky_bantam.jpg/440px-Silky_bantam.jpg'
+// }
+
+// query selector - swiss army knife, possible to select
+// by tag / class / id 
+// however gives only the first element
+// by class 
+document.querySelector('.square')
+
+// by id
+document.querySelector('#banner')
+
+// by tag
+document.querySelector('p')
+
+// by title 
+document.querySelector('a[title="Java"]')
+
+// ALL
+// returns the collection of matching elements instead of the first matching one
+
+// querySelectorAll 
+
+document.querySelectorAll('p a')
+
+// printing all the hrefs belonging to the anchor tags inside of the paragraphs
+
+const links = document.querySelectorAll('p a')
+
+for (let link of links) {
+    console.log(link.href)
 }
+
