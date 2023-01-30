@@ -28,3 +28,20 @@ document.querySelector('h1').innerText = <i>regrer</i>
 
 document.querySelector('h1').innerHTML += '<sup>njnjkn</sup>'
 
+// Attributes
+
+const firstLink = document.querySelector('a')
+
+firstLink.href
+
+firstLink.getAttribute('href')
+
+// input type
+const input = document.querySelector('input[type="text"]')
+
+
+// changing input type through the dom
+input.type = 'password'
+input.type = 'color'
+
+input.setAttribute('type', 'text')
