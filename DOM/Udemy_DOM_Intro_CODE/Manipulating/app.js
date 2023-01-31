@@ -22,11 +22,11 @@ for (let link of allLinks) {
     link.innerText = 'I AM A LINK'
 }
 
-document.querySelector('h1').innerText = <i>regrer</i>
+// document.querySelector('h1').innerText = <i>regrer</i>
 
 // adds to the existing text
 
-document.querySelector('h1').innerHTML += '<sup>njnjkn</sup>'
+// document.querySelector('h1').innerHTML += '<sup>njnjkn</sup>'
 
 // Attributes
 
@@ -45,3 +45,29 @@ input.type = 'password'
 input.type = 'color'
 
 input.setAttribute('type', 'text')
+
+// Changing style properties through dom
+
+const h1 = document.querySelector('h1')
+
+h1.style
+
+// changing color
+
+h1.style.color = 'green'
+
+// for every link selected with querySelector all
+
+for (let link of allLinks) {
+    link.style.color = 'rgb(0,108,134)'
+    link.style.textDecorationColor = 'magenta';
+    link.style.textDecorationStyle = 'wavy';
+}
+
+// getting the visible style
+
+window.getComputedStyle(h1)
+
+window.getComputedStyle(h1).color
+window.getComputedStyle(h1).fontSize
+
