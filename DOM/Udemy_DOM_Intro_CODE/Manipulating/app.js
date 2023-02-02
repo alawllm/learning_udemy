@@ -71,3 +71,28 @@ window.getComputedStyle(h1)
 window.getComputedStyle(h1).color
 window.getComputedStyle(h1).fontSize
 
+// Setting class - manipulating
+
+// h2.setAttribute('class', 'purple')
+
+
+// h2.setAttribute('class', 'border')
+// let currentClasses = h2.getAttribute('class')
+
+// adding another one
+// h2.setAttribute('class', `${currentClasses} purple`)
+
+// better method 
+
+// h2.classList
+h1.classList.add('purple')
+h1.classList.remove('purple')
+
+// yes or no 
+
+h1.classList.contains('border')
+false
+
+// on and off 
+
+h1.classList.toggle('border')
