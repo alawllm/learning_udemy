@@ -96,3 +96,20 @@ false
 // on and off 
 
 h1.classList.toggle('border')
+
+
+
+const firstBold = document.querySelector('b')
+
+firstBold.parentElement
+
+firstBold.parentElement.parentElement
+
+// only one parent, multiple children possible
+
+const paragraph = firstBold.parentElement
+paragraph.children[0]
+
+
+squareImg.nextElementSibling
+squareImg.previousElementSibling
