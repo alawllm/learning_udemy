@@ -110,6 +110,26 @@ firstBold.parentElement.parentElement
 const paragraph = firstBold.parentElement
 paragraph.children[0]
 
+// next / previous Sibling - gives text nodes 
 
 squareImg.nextElementSibling
 squareImg.previousElementSibling
+
+// creating DOM elements
+// creates a new empty object 
+document.createElement('img')
+
+// adding a class 
+newImage.classList.add('square')
+
+// newImage.src = ... 
+document.body.appendChild(newImage)
+
+p.append('new teeext!')
+
+p.prepend(newB)
+
+// insert Adjacent Element
+// beforebegin, afterend etc 
+
+h1.insertAdjacentElement('afterend', h2)
