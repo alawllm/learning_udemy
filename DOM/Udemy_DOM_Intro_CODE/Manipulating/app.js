@@ -133,3 +133,12 @@ p.prepend(newB)
 // beforebegin, afterend etc 
 
 h1.insertAdjacentElement('afterend', h2)
+
+// removeChild - based upon a parent and child relationship
+
+const b = document.querySelector('b')
+b.parentElement.removeChild(b)
+
+// remove - better way to remove directly 
+const img = document.querySelector('img')
+img.remove()
