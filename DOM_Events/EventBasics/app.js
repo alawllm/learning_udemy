@@ -1,39 +1,25 @@
-const btn = document.querySelector('#v2');
+let btn = document.querySelector('#v2')
+
+// can be set to a function
+// onclick - small letters
 
 btn.onclick = function () {
-    console.log("YOU CLICKED ME!")
-    console.log("I HOPE IT WORKED!!")
+    console.log("You clicked me!")
+    console.log("i hope it worked")
 }
 
+// function is not executed; passed as a property 
+// executed firstly on click 
+
 function scream() {
-    console.log("AAAAAHHHHH");
-    console.log("STOP TOUCHING ME!")
+    console.log("AAAAAAAAAA")
 }
 
 btn.onmouseenter = scream;
 
+// it HAS to be wrapped in some sort of function
+// in order not to execute it right away 
+// the onclick property has to be set TO a function 
+// the value has to be a function 
 
-document.querySelector('h1').onclick = () => {
-    alert('you clicked the h1!')
-}
-
-
-const btn3 = document.querySelector('#v3');
-btn3.addEventListener('click', function () {
-    alert("CLICKED!");
-})
-
-function twist() {
-    console.log("TWIST!")
-}
-function shout() {
-    console.log("SHOUT!")
-}
-
-const tasButton = document.querySelector('#tas');
-
-// tasButton.onclick = twist;
-// tasButton.onclick = shout;
-
-tasButton.addEventListener('click', twist)
-tasButton.addEventListener('click', shout)
+document.querySelector('h1').onclick = () => alert('you clicked the h1!') 
