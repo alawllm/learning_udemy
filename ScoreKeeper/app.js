@@ -9,7 +9,7 @@ const winningScoreSelect = document.querySelector('#playto')
 
 let p1score = 0;
 let p2score = 0;
-let winningScore = 5;
+let winningScore = 3;
 let isGameOver = false;
 
 // if game is not yet over the game still goes 
@@ -20,8 +20,10 @@ p1button.addEventListener('click', function () {
     }
     if (p1score === winningScore) {
         isGameOver = true;
-        p1display.classList.add('winner');
-        p2display.classList.add('loser')
+        p1display.classList.add('has-text-success');
+        p2display.classList.add('has-text-danger');
+        p1button.disabled = true;
+        p2button.disabled = true;
     }
     p1display.textContent = p1score;
 
@@ -34,8 +36,10 @@ p2button.addEventListener('click', function () {
     }
     if (p2score === winningScore) {
         isGameOver = true;
-        p2display.classList.add('winner');
-        p1display.classList.add('loser')
+        p2display.classList.add('has-text-success');
+        p1display.classList.add('has-text-danger');
+        p1button.disabled = true;
+        p2button.disabled = true;
     }
     p2display.textContent = p2score;
 })
@@ -60,6 +64,8 @@ function resetFunc() {
     p2score = 0;
     p1display.textContent = 0;
     p2display.textContent = 0;
-    p2display.classList.remove('winner', 'loser');
-    p1display.classList.remove('winner', 'loser')
+    p2display.classList.remove('has-text-success', 'has-text-danger');
+    p1display.classList.remove('has-text-success', 'has-text-danger');
+    p1button.disabled = false;
+    p2button.disabled = false;
 }
