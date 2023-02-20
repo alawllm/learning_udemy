@@ -5,12 +5,14 @@ const p2button = document.querySelector('#p2button')
 const reset = document.querySelector('#reset')
 const p1display = document.querySelector('#p1display')
 const p2display = document.querySelector('#p2display')
-
+const winningScoreSelect = document.querySelector('#playto')
 
 let p1score = 0;
 let p2score = 0;
 let winningScore = 5;
 let isGameOver = false;
+
+// if game is not yet over the game still goes 
 
 p1button.addEventListener('click', function () {
     if (!isGameOver) {
@@ -18,9 +20,13 @@ p1button.addEventListener('click', function () {
     }
     if (p1score === winningScore) {
         isGameOver = true;
+        p1display.classList.add('winner');
+        p2display.classList.add('loser')
     }
     p1display.textContent = p1score;
+
 })
+
 
 p2button.addEventListener('click', function () {
     if (!isGameOver) {
@@ -28,14 +34,32 @@ p2button.addEventListener('click', function () {
     }
     if (p2score === winningScore) {
         isGameOver = true;
+        p2display.classList.add('winner');
+        p1display.classList.add('loser')
     }
     p2display.textContent = p2score;
 })
 
-reset.addEventListener('click', function () {
+// updating the winning score 
+// function will be executed in the right moment 
+// anonymous function passed in as a callback 
+// reset function executed inside 
+
+winningScoreSelect.addEventListener('change', function () {
+    winningScore = parseInt(this.value)
+    resetFunc()
+})
+
+// passing the function as an argument 
+
+reset.addEventListener('click', resetFunc)
+
+function resetFunc() {
     isGameOver = false;
     p1score = 0;
     p2score = 0;
     p1display.textContent = 0;
     p2display.textContent = 0;
-})
+    p2display.classList.remove('winner', 'loser');
+    p1display.classList.remove('winner', 'loser')
+}
