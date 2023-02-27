@@ -58,24 +58,47 @@ const fakeRequestPromise = (url) => {
 // also kind of nesting 
 // .then and .catch methods 
 
-fakeRequestPromise('yelp.com/api/coffee/page1')
-    .then(() => {
-        console.log('it worked! (page 1)')
-        fakeRequestPromise('yelp.com/api/coffee/page2')
-            .then(() => {
-                console.log('promise resolved (page 2)')
-                fakeRequestPromise('yelp.com/api/coffee/page3')
-                    .then(() => {
-                        console.log('promise resolved (page 3)')
-                    })
-                    .catch(() => {
-                        console.log(('rejected (page 3)'))
-                    })
-            })
+// fakeRequestPromise('yelp.com/api/coffee/page1')
+//     .then(() => {
+//         console.log('it worked! (page 1)')
+//         fakeRequestPromise('yelp.com/api/coffee/page2')
+//             .then(() => {
+//                 console.log('promise resolved (page 2)')
+//                 fakeRequestPromise('yelp.com/api/coffee/page3')
+//                     .then(() => {
+//                         console.log('promise resolved (page 3)')
+//                     })
+//                     .catch(() => {
+//                         console.log(('rejected (page 3)'))
+//                     })
+//             })
 
-            .catch(() => {
-                console.log(('rejected (page 2)'))
-            })
-    }).catch(() => {
-        console.log(('rejected (page 1)'))
-    }) 
+//             .catch(() => {
+//                 console.log(('rejected (page 2)'))
+//             })
+//     }).catch(() => {
+//         console.log(('rejected (page 1)'))
+//     }) 
+
+// no need for nesting - if any of the requests is rejected it falls to catch 
+// data - coming from the function 
+// promise chain - dependent asynchronous actions 
+
+fakeRequestPromise('yelp.com/api/coffee/page1')
+    .then((data) => {
+        console.log('it worked! (page1)')
+        console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffee/page2')
+    })
+    .then((data) => {
+        console.log('it worked! (page 2)')
+        console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffee/page3')
+    })
+    .then((data) => {
+        console.log('it worked! (page 3)')
+        console.log(data)
+    })
+    .catch(() => {
+        console.log('oh no!')
+    })
