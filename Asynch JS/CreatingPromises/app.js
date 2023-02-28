@@ -36,7 +36,35 @@ delayedColorChange('red', 1000)
     .then(() => delayedColorChange('orange', 1000))
     .then(() => delayedColorChange('green', 1000))
     .then(() => delayedColorChange('purple', 1000))
-    .then(() => delayedColorChange('white', 1000))
-    .then(() => delayedColorChange('black', 1000))
-    .then(() => delayedColorChange('yellow', 1000))
-    .then(() => delayedColorChange('orange', 1000))
+
+
+async function rainbow() {
+    await delayedColorChange('red', 1000)
+    await delayedColorChange('orange', 1000)
+    await delayedColorChange('blue', 1000)
+    await delayedColorChange('yellow', 1000)
+    return 'all done!'
+}
+
+// rainbow().then(() => console.log('end of rainbow'))
+
+async function printRainbow() {
+    await rainbow();
+    console.log('end of rainbow!')
+}
+
+// awaiting a request, whatever comes back is being 
+// stored in a variable 
+
+async function makeTwoRequests() {
+    try {
+        let data1 = await fakeRequest('/page1')
+        let data2 = await fakeRequest('/page2')
+        console.log(data1)
+    }
+    catch (e) {
+        console.log('it failed')
+        console.log('error is:', e)
+    }
+
+}
